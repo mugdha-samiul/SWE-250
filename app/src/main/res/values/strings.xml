@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PojectDemo</string>
+    <string name="Story">The cat jumped over the fence. The dog barked at the mailman. The birds sang in the trees. The sun shone brightly in the sky. \n\nThe wind blew gently through the leaves. The flowers bloomed in the garden. The river flowed smoothly to the sea. The mountains stood tall and proud. The stars twinkled in the night sky. The moon shone softly on the water. The rain fell softly from the clouds. The snowflakes danced in the air. The ice glimmered in the sun. The fire crackled in the hearth. The trees rustled in the breeze. The waves crashed on the shore. The clouds drifted lazily by.</string>
+    <string name="title">Price_Dealer\n\n</string>
+    <string name="subtitle">Select the product you need\n\n</string>
+    <string name="riceeChalDal">
+        Chaldal.com\n
+        Paijam Rice (Boiled)\n
+        1 kg\n
+        ৳59(21% off)\n
+    </string>
+</resources>

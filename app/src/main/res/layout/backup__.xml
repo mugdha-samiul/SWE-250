@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAEA65"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:textAlignment="center"
+    tools:context="MainActivity">
+
+    <TextView
+        android:id="@+id/wow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#6E3BAC"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/mc"
+        android:text=" "
+        android:textColor="@color/teal_700"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/FirstButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:drawableRight="@drawable/gg"
+        android:outlineAmbientShadowColor="@color/white"
+        android:shadowColor="@color/white"
+        android:text="click on me"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/bottomSpace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Story"
+            android:textAllCaps="true"
+            android:textColor="@color/teal_700"
+            android:textSize="15sp" />
+    </ScrollView>
+</LinearLayout>
