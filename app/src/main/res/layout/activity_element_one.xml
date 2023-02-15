@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,21 +9,30 @@
     android:background="@color/yellow"
     tools:context=".Element_One_Activity">
 
-    <ImageView
-        android:src="@drawable/brr"
+    <LinearLayout
+        android:layout_margin="5mm"
+        android:orientation="vertical"
+        android:background="@color/yellow"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:id="@+id/ElementOne" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_marginTop="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:id="@+id/mc"
-        android:text="@string/riceeChalDal"
-        android:textStyle="bold"
-        android:textSize="15dp"
-        android:textColor="@color/teal_700"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-</LinearLayout>
+        <ImageView
+            android:src="@drawable/brr"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/ElementOne" />
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:id="@+id/mc"
+            android:text="@string/riceChalDal"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>
