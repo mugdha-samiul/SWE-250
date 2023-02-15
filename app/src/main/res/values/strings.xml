@@ -4,28 +4,8 @@
     <string name="title">Price_Dealer\n\n</string>
     <string name="subtitle">Select the product you need\n\n</string>
     <string name="riceChalDal">Chaldal.com\nPaijam Rice (Boiled)\n1 kg\n৳59(21% off)\n</string>
-    <string name="eggeChalDal">
-        Chaldal.com\n
-        Chicken Eggs (Layer)\n
-        1 Dozen\n
-        ৳139\n
-    </string>
-    <string name="potatoChalDal">
-        Chaldal.com\n
-        Potato Regular (± 50 gm)\n
-        1 kg\n
-        ৳25(17% off)\n
-    </string>
-    <string name="bagChalDal">
-        Chaldal.com\n
-        Trash Bag Black - 20" x 30"\n
-        12 pcs\n
-        ৳195\n
-    </string>
-    <string name="bottleChalDal">
-        Chaldal.com\n
-        Mum Drinking Water\n
-        2 Litre\n
-        ৳35\n
-    </string>
+    <string name="eggChalDal">Chaldal.com\nChicken Eggs (Layer)\n1 Dozen\n৳139\n</string>
+    <string name="potatoChalDal">Chaldal.com\nPotato Regular (± 50 gm)\n1 kg\n৳25(17% off)\n</string>
+    <string name="bagChalDal">Chaldal.com\nTrash Bag Black - 20" x 30"\n12 pcs\n৳195\n</string>
+    <string name="bottleChalDal">Chaldal.com\nMum Drinking Water\n2 Litre\n৳35\n</string>
 </resources>

@@ -10,24 +10,24 @@
     tools:context=".Element_One_Activity">
 
     <LinearLayout
-        android:layout_margin="5mm"
+        android:layout_margin="20dp"
         android:orientation="vertical"
         android:background="@color/yellow"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
+            android:id="@+id/ElementPic"
             android:src="@drawable/brr"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:id="@+id/ElementOne" />
+            android:layout_height="250dp" />
 
         <TextView
+            android:id="@+id/ElementDescription"
+            android:text="@string/riceChalDal"
             android:layout_marginTop="50dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:id="@+id/mc"
-            android:text="@string/riceChalDal"
             android:textStyle="bold"
             android:textSize="25dp"
             android:textAlignment="viewStart"

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -16,7 +17,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button PotatoButton;
     private Button BagButton;
     private Button BottleButton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         PotatoButton.setOnClickListener(this);
         BagButton.setOnClickListener(this);
         BottleButton.setOnClickListener(this);
-
     }
 
     @Override
@@ -42,6 +41,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(view.getId() == R.id.RICE){
             intent = new Intent(MainActivity.this, Element_One_Activity.class);
             intent.putExtra("product", "rice");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.EGG){
+            intent = new Intent(MainActivity.this, Element_One_Activity.class);
+            intent.putExtra("product", "egg");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.POTATO){
+            intent = new Intent(MainActivity.this, Element_One_Activity.class);
+            intent.putExtra("product", "potato");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.BAG){
+            intent = new Intent(MainActivity.this, Element_One_Activity.class);
+            intent.putExtra("product", "bag");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.BOTTLE){
+            intent = new Intent(MainActivity.this, Element_One_Activity.class);
+            intent.putExtra("product", "bottle");
             startActivity(intent);
         }
     }
