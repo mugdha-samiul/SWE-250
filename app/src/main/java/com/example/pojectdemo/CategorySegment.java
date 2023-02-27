@@ -82,6 +82,30 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-
+        if(view.getId() == R.id.ITEM1){
+            intent = new Intent(CategorySegment.this, ProductInfo.class);
+            intent.putExtra("product", "item1");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.ITEM2){
+            intent = new Intent(CategorySegment.this, ProductInfo.class);
+            intent.putExtra("product", "item2");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.ITEM3){
+            intent = new Intent(CategorySegment.this, ProductInfo.class);
+            intent.putExtra("product", "item3");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.ITEM4){
+            intent = new Intent(CategorySegment.this, ProductInfo.class);
+            intent.putExtra("product", "item4");
+            startActivity(intent);
+        }
+        if(view.getId() == R.id.ITEM5){
+            intent = new Intent(CategorySegment.this, ProductInfo.class);
+            intent.putExtra("product", "item5");
+            startActivity(intent);
+        }
     }
 }
