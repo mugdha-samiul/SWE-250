@@ -20,8 +20,7 @@
         android:textAllCaps="true"
         android:textColor="#6E3BAC"
         android:textSize="25sp"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/header_subtitle"
@@ -35,7 +34,7 @@
         android:textStyle="bold" />
 
     <Button
-        android:id="@+id/RICE"
+        android:id="@+id/MEATFISH"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -51,7 +50,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/EGG"
+        android:id="@+id/PERSONAL_CARE"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -66,7 +65,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/POTATO"
+        android:id="@+id/STATIONARY"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -81,7 +80,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/BAG"
+        android:id="@+id/PROCESSED_FOOD"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -96,7 +95,7 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/BOTTLE"
+        android:id="@+id/VEGETABLES"
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"

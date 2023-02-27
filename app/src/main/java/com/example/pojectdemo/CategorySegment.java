@@ -11,8 +11,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CategorySegment extends AppCompatActivity implements View.OnClickListener{
-//    private TextView textView;
-//    private TextView textView2;
     private Intent intent;
 
     private Button button1;
@@ -37,8 +35,6 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
         button4.setOnClickListener(this);
         button5.setOnClickListener(this);
 
-//        textView = (TextView)findViewById(R.id.pp);
-//        textView2 = (TextView)findViewById(R.id.qq);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
