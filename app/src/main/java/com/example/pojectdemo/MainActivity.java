@@ -23,6 +23,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Scraper scraper = new Scraper();
+        scraper.scrape();
+
         RiceButton = (Button)findViewById(R.id.RICE);
         EggButton = (Button)findViewById(R.id.EGG);
         PotatoButton = (Button)findViewById(R.id.POTATO);
