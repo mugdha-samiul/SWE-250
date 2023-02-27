@@ -42,28 +42,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         if(view.getId() == R.id.RICE){
-            intent = new Intent(MainActivity.this, Element_One_Activity.class);
-            intent.putExtra("product", "rice");
+            intent = new Intent(MainActivity.this, CategorySegment.class);
+            intent.putExtra("category", "meat_fish");
             startActivity(intent);
         }
         if(view.getId() == R.id.EGG){
-            intent = new Intent(MainActivity.this, Element_One_Activity.class);
-            intent.putExtra("product", "egg");
+            intent = new Intent(MainActivity.this, CategorySegment.class);
+            intent.putExtra("category", "personal_care");
             startActivity(intent);
         }
         if(view.getId() == R.id.POTATO){
-            intent = new Intent(MainActivity.this, Element_One_Activity.class);
-            intent.putExtra("product", "potato");
+            intent = new Intent(MainActivity.this, CategorySegment.class);
+            intent.putExtra("category", "stationary");
             startActivity(intent);
         }
         if(view.getId() == R.id.BAG){
-            intent = new Intent(MainActivity.this, Element_One_Activity.class);
-            intent.putExtra("product", "bag");
+            intent = new Intent(MainActivity.this, CategorySegment.class);
+            intent.putExtra("category", "processed_food");
             startActivity(intent);
         }
         if(view.getId() == R.id.BOTTLE){
-            intent = new Intent(MainActivity.this, Element_One_Activity.class);
-            intent.putExtra("product", "bottle");
+            intent = new Intent(MainActivity.this, CategorySegment.class);
+            intent.putExtra("category", "vegetables");
             startActivity(intent);
         }
     }

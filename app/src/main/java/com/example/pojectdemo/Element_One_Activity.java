@@ -10,10 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Element_One_Activity extends AppCompatActivity {
-
     private ImageView imageView;
     private TextView textView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +23,7 @@ public class Element_One_Activity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
             String productName = bundle.getString("product");
+            System.out.println("pro name is "+productName);
             ShowDescription(productName);
         }
     }
@@ -32,11 +31,11 @@ public class Element_One_Activity extends AppCompatActivity {
     private void ShowDescription(String productName) {
         if(productName.equals("rice")){
             imageView.setImageResource(R.drawable.brr);
-            textView.setText(R.string.riceChalDal);
+            textView.setText("njnfkjvjfkx");
         }
         else if(productName.equals("egg")){
             imageView.setImageResource(R.drawable.egg);
-            textView.setText(R.string.eggChalDal);
+            textView.setText("vogasoda");
         }
         else if(productName.equals("potato")){
             imageView.setImageResource(R.drawable.potato);

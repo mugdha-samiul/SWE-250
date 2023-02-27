@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">PojectDemo</string>
-    <string name="Story">The cat jumped over the fence. The dog barked at the mailman. The birds sang in the trees. The sun shone brightly in the sky. \n\nThe wind blew gently through the leaves. The flowers bloomed in the garden. The river flowed smoothly to the sea. The mountains stood tall and proud. The stars twinkled in the night sky. The moon shone softly on the water. The rain fell softly from the clouds. The snowflakes danced in the air. The ice glimmered in the sun. The fire crackled in the hearth. The trees rustled in the breeze. The waves crashed on the shore. The clouds drifted lazily by.</string>
-    <string name="title">Price_Dealer\n\n</string>
-    <string name="subtitle">Select the product you need\n\n</string>
+    <string name="app_name">PriceSpy</string>
+    <string name="Story2">The cat jumped over the fence. The dog barked at the mailman. The birds sang in the trees. The sun shone brightly in the sky. \n\nThe wind blew gently through the leaves. The flowers bloomed in the garden. The river flowed smoothly to the sea. The mountains stood tall and proud. The stars twinkled in the night sky. The moon shone softly on the water. The rain fell softly from the clouds. The snowflakes danced in the air. The ice glimmered in the sun. The fire crackled in the hearth. The trees rustled in the breeze. The waves crashed on the shore. The clouds drifted lazily by.</string>
+    <string name="title">PriceSpy\n\n</string>
+    <string name="Story">The subsegments will be added later\n\n</string>
+    <string name="subtitle">Select the category\n\n</string>
     <string name="riceChalDal">Chaldal.com\nPaijam Rice (Boiled)\n1 kg\n৳59(21% off)\n</string>
     <string name="eggChalDal">Chaldal.com\nChicken Eggs (Layer)\n1 Dozen\n৳139\n</string>
     <string name="potatoChalDal">Chaldal.com\nPotato Regular (± 50 gm)\n1 kg\n৳25(17% off)\n</string>

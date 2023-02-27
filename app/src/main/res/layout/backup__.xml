@@ -1,63 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAEA65"
     android:orientation="vertical"
-    android:padding="10dp"
-    android:textAlignment="center"
-    tools:context="MainActivity">
+    android:background="@color/yellow"
+    tools:context=".Element_One_Activity">
 
-    <TextView
-        android:id="@+id/wow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/title"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textColor="#6E3BAC"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/mc"
-        android:text=" "
-        android:textColor="@color/teal_700"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Button
-        android:id="@+id/FirstButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:drawableRight="@drawable/gg"
-        android:outlineAmbientShadowColor="@color/white"
-        android:shadowColor="@color/white"
-        android:text="click on me"
-        android:textAlignment="center" />
-
-    <TextView
-        android:id="@+id/bottomSpace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"/>
-
-    <ScrollView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Story"
-            android:textAllCaps="true"
+            android:id="@+id/pp"
+            android:text="@string/riceChalDal"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="viewStart"
             android:textColor="@color/teal_700"
-            android:textSize="15sp" />
-    </ScrollView>
-</LinearLayout>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/qq"
+            android:text="@string/riceChalDal"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+</ScrollView>
+
+
+<!--    package com.example.pojectdemo;-->
+
+<!--    import androidx.appcompat.app.AppCompatActivity;-->
+
+<!--    import android.os.Bundle;-->
+<!--    import android.view.View;-->
+<!--    import android.view.View;-->
+<!--    import android.widget.Button;-->
+<!--    import android.widget.ImageView;-->
+<!--    import android.widget.TextView;-->
+
+<!--    public class CategorySegment extends AppCompatActivity {-->
+<!--    //private ImageView imageView;-->
+<!--    private TextView textView;-->
+<!--    private TextView textView2;-->
+<!--    @Override-->
+<!--    protected void onCreate(Bundle savedInstanceState) {-->
+<!--    super.onCreate(savedInstanceState);-->
+<!--    setContentView(R.layout.activity_category_segment);-->
+
+<!--    textView = (TextView)findViewById(R.id.pp);-->
+<!--    textView2 = (TextView)findViewById(R.id.qq);-->
+
+<!--    Bundle bundle = getIntent().getExtras();-->
+<!--    if(bundle != null){-->
+<!--    String productName = bundle.getString("category");-->
+<!--    ShowDescription(productName);-->
+<!--    }-->
+<!--    }-->
+<!--    private void ShowDescription(String productName) {-->
+<!--    if(productName.equals("meat_fish")){-->
+<!--    textView.setText(R.string.riceChalDal);-->
+<!--    textView2.setText(R.string.Story);-->
+<!--    }-->
+<!--    else if(productName.equals("personal_care")){-->
+<!--    textView.setText(R.string.eggChalDal);-->
+<!--    textView2.setText(R.string.Story);-->
+<!--    }-->
+<!--    else if(productName.equals("stationary")){-->
+<!--    textView.setText(R.string.potatoChalDal);-->
+<!--    textView2.setText(R.string.Story);-->
+<!--    }-->
+<!--    else if(productName.equals("processed_food")){-->
+<!--    textView.setText(R.string.bagChalDal);-->
+<!--    textView2.setText(R.string.Story);-->
+<!--    }-->
+<!--    else if(productName.equals("vegetables")){-->
+<!--    textView.setText(R.string.bottleChalDal);-->
+<!--    textView2.setText(R.string.Story);-->
+<!--    }-->
+<!--    }-->
+<!--    }-->
