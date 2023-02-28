@@ -17,10 +17,9 @@ import java.nio.charset.StandardCharsets;
 
 public class Scraper extends AppCompatActivity {
 
-    String productname="";
+    String productname = "";
 
     Document doc;
-
 
 
     @Override
@@ -31,12 +30,12 @@ public class Scraper extends AppCompatActivity {
 
     }
 
-    public void scrape(){
+    public void scrape() {
         Content content = new Content();
         content.execute();
     }
 
-    private class Content extends AsyncTask<Void,Void,Void>{
+    private class Content extends AsyncTask<Void, Void, Void> {
 
         @Override
         protected void onPreExecute() {
@@ -67,8 +66,7 @@ public class Scraper extends AppCompatActivity {
             Log.d("number of products", "number of products " + String.valueOf(products.size()));
 
 
-
-            for(Element product : products){
+            for (Element product : products) {
                 //String name = product.select(".name").text();
                 //productname += name;
                 //productname += ',';
@@ -77,9 +75,9 @@ public class Scraper extends AppCompatActivity {
 
 
                 Elements discountedPrice = product.select(".discountedPrice");
-                for(Element discountedValue : discountedPrice){
+                for (Element discountedValue : discountedPrice) {
                     Elements insidePrice = discountedValue.getElementsByTag("span");
-                    for(Element priceElement: insidePrice){
+                    for (Element priceElement : insidePrice) {
 
                         try {
                             String priceValue = String.valueOf(Integer.parseInt(priceElement.text()));
@@ -100,13 +98,13 @@ public class Scraper extends AppCompatActivity {
 
             String FILENAME = "product_name_file.csv";
 
-            try{
+            try {
 
                 FileOutputStream out = openFileOutput(FILENAME, MODE_PRIVATE);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 

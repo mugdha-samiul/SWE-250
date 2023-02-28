@@ -7,63 +7,53 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Intent intent;
 
-    private Button MeatFishButton;
-    private Button PersonalCareButton;
-    private Button StationaryButton;
-    private Button ProcessedFoodButton;
-    private Button VegetablesButton;
+public class MainActivity extends AppCompatActivity {
+    private static final int SPLASH_SCREEN = 5000;
+    Animation topAnim, bottomAnim;
+    ImageView image;
+    TextView logo, slogan, slogan2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
         Scraper scraper = new Scraper();
         scraper.scrape();
 
-        MeatFishButton = (Button)findViewById(R.id.MEATFISH);
-        PersonalCareButton = (Button)findViewById(R.id.PERSONAL_CARE);
-        StationaryButton = (Button)findViewById(R.id.STATIONARY);
-        ProcessedFoodButton = (Button)findViewById(R.id.PROCESSED_FOOD);
-        VegetablesButton = (Button)findViewById(R.id.VEGETABLES);
+        topAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
+        bottomAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
 
-        MeatFishButton.setOnClickListener(this);
-        PersonalCareButton.setOnClickListener(this);
-        StationaryButton.setOnClickListener(this);
-        ProcessedFoodButton.setOnClickListener(this);
-        VegetablesButton.setOnClickListener(this);
-    }
+        image = findViewById(R.id.imageView);
+        logo = findViewById(R.id.textView);
+        slogan = findViewById(R.id.textView2);
+        slogan2 = findViewById(R.id.textView5);
 
-    @Override
-    public void onClick(View view) {
-        if(view.getId() == R.id.MEATFISH){
-            intent = new Intent(MainActivity.this, CategorySegment.class);
-            intent.putExtra("category", "meat_fish");
-            startActivity(intent);
-        }
-        if(view.getId() == R.id.PERSONAL_CARE){
-            intent = new Intent(MainActivity.this, CategorySegment.class);
-            intent.putExtra("category", "personal_care");
-            startActivity(intent);
-        }
-        if(view.getId() == R.id.STATIONARY){
-            intent = new Intent(MainActivity.this, CategorySegment.class);
-            intent.putExtra("category", "stationary");
-            startActivity(intent);
-        }
-        if(view.getId() == R.id.PROCESSED_FOOD){
-            intent = new Intent(MainActivity.this, CategorySegment.class);
-            intent.putExtra("category", "processed_food");
-            startActivity(intent);
-        }
-        if(view.getId() == R.id.VEGETABLES){
-            intent = new Intent(MainActivity.this, CategorySegment.class);
-            intent.putExtra("category", "vegetables");
-            startActivity(intent);
-        }
+        image.setAnimation(topAnim);
+        logo.setAnimation(bottomAnim);
+        slogan.setAnimation(bottomAnim);
+        slogan2.setAnimation(bottomAnim);
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(MainActivity.this,Dashboard.class);
+                startActivity(intent);
+                finish();
+            }
+        },SPLASH_SCREEN);
+
     }
 }

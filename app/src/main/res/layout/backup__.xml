@@ -13,6 +13,19 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/ss"
+            android:src="@drawable/logo3"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:textAlignment="viewStart"
+            android:textColor="@color/teal_700"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+        />
         <TextView
             android:id="@+id/pp"
             android:text="@string/riceChalDal"
