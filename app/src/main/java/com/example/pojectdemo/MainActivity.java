@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,6 +18,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.charset.StandardCharsets;
+
 
 public class MainActivity extends AppCompatActivity {
     private static final int SPLASH_SCREEN = 5000;
@@ -24,14 +29,17 @@ public class MainActivity extends AppCompatActivity {
     ImageView image;
     TextView logo, slogan, slogan2;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
+
         Scraper scraper = new Scraper();
-        scraper.scrape();
+        scraper.scrape(getApplicationContext());
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
