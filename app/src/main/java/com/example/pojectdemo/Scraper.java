@@ -185,6 +185,71 @@ public class Scraper extends Activity {
                 e.printStackTrace();
             }
 
+            //scraping data from sobjibazaar
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/filterSearch?q=chicken&adv=true&cid=1&mid=0&pf=&pt=&adv=false&isc=false&sid=false#/pageSize=6&orderBy=0"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            Elements productTitle = doc.select(".product-title");
+            String[] nameString;
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for(Element element:productTitle){
+                int i=0;
+                String name_value = "";
+                record += url;
+                record += " ";
+                Elements a = element.getElementsByTag("a");
+                for(Element a_element: a){
+                    name_value = a.text();
+                    Log.d("sflsk", "sobjibazaar product " + name_value);
+                    record += name_value;
+                    record += ",";
+                }
+
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                record += price_element_text;
+                record += '\n';
+                nameString[i] = name_value;
+                i++;
+            }
+
+            Log.d("habijabi", record);
+
+            try{
+
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+
+
+
+
+
+
+
+
+
 
             return null;
         }
