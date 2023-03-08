@@ -1,96 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FAEA65"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/yellow"
-    tools:context=".Element_One_Activity">
-
+    tools:context=".MainActivity">
 
     <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="1dp"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-<!--        <ImageView-->
-<!--            android:id="@+id/ss"-->
-<!--            android:src="@drawable/logo3"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            />-->
-<!--        <TextView-->
-<!--            android:id="@+id/detail1"-->
-<!--            android:text="@string/riceChalDal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/detail2"-->
-<!--            android:text="@string/riceChalDal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/detail3"-->
-<!--            android:text="@string/riceChalDal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/detail4"-->
-<!--            android:text="@string/riceChalDal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/detail5"-->
-<!--            android:text="@string/riceChalDal"-->
-<!--            android:layout_marginTop="50dp"-->
-<!--            android:layout_marginLeft="20dp"-->
-<!--            android:layout_marginRight="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            android:textSize="25dp"-->
-<!--            android:textAlignment="viewStart"-->
-<!--            android:textColor="@color/teal_700"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"/>-->
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ListView
             android:id="@+id/lv_customerList"
@@ -103,4 +30,127 @@
     </LinearLayout>
 
 
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+
+<!--<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="@color/yellow"-->
+<!--    tools:context=".Element_One_Activity">-->
+
+
+<!--&lt;!&ndash;    <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;        android:orientation="vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;        android:layout_height="match_parent">&ndash;&gt;-->
+<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/ss"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:src="@drawable/logo3"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;            />&ndash;&gt;-->
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detail1"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/riceChalDal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detail2"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/riceChalDal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detail3"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/riceChalDal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detail4"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/riceChalDal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        <TextView&ndash;&gt;-->
+<!--&lt;!&ndash;            android:id="@+id/detail5"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:text="@string/riceChalDal"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginTop="50dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginLeft="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_marginRight="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textStyle="bold"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textAlignment="viewStart"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:textColor="@color/teal_700"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:layout_height="wrap_content"/>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    </LinearLayout>&ndash;&gt;-->
+<!--    <LinearLayout-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:layout_marginBottom="1dp"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_viewall">-->
+
+<!--        <ListView-->
+<!--            android:id="@+id/lv_customerList"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="40dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/btn_viewall" />-->
+<!--    </LinearLayout>-->
+
+<!--</ScrollView>-->
+

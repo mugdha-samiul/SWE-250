@@ -121,15 +121,18 @@ public class ProductInfo extends AppCompatActivity {
         }
         */
 
-        Context context = getApplicationContext();
-        String filename = productName+"-data.csv";
+
+        String filename = getFilesDir()+"/"+productName+ "-data.csv";
 
         Log.d("filename", filename);
 
         List<String> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
+            int i=0;
             while ((line = br.readLine()) != null) {
+                //records[i] = line;
+                i++;
                 records.add(line);
                 Log.d("reading from csv", line);
             }
@@ -137,8 +140,9 @@ public class ProductInfo extends AppCompatActivity {
             e.printStackTrace();
         }
 
+
         listView = findViewById(R.id.lv_customerList);
-        ArrayAdapter arrayAdapter = new ArrayAdapter<List>(ProductInfo.this, android.R.layout.simple_list_item_1, Collections.singletonList(records));
+        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(ProductInfo.this, android.R.layout.simple_list_item_1, records);
         listView.setAdapter(arrayAdapter);
 
     }
