@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View;
 import android.view.WindowManager;
@@ -84,30 +85,50 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
+        Button b;
+        String specific_product_name = "";
         if(view.getId() == R.id.ITEM1){
+            b = (Button) view;
+            specific_product_name = b.getText().toString();
+
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", "item1");
+            intent.putExtra("product", specific_product_name);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM2){
+            b = (Button) view;
+            specific_product_name = b.getText().toString();
+
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", "item2");
+            intent.putExtra("product", specific_product_name);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM3){
+            b = (Button) view;
+            specific_product_name = b.getText().toString();
+
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", "item3");
+            intent.putExtra("product", specific_product_name);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM4){
+            b = (Button) view;
+            specific_product_name = b.getText().toString();
+
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", "item4");
+            intent.putExtra("product", specific_product_name);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM5){
+            b = (Button) view;
+            specific_product_name = b.getText().toString();
+
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", "item5");
+            intent.putExtra("product", specific_product_name);
             startActivity(intent);
         }
+        //intent = new Intent(CategorySegment.this, ProductInfo.class);
+        //intent.putExtra("product", specific_product_name);
+        //startActivity(intent);
     }
 }
