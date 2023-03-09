@@ -111,7 +111,7 @@ public class Scraper extends Activity {
 
                                 try {
                                     String priceValue = String.valueOf(Integer.parseInt(priceElement.text()));
-                                    Log.d("price value beef", priceValue+"\n");
+                                    //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
                                     nfe.printStackTrace();
@@ -127,7 +127,7 @@ public class Scraper extends Activity {
 
                                 try {
                                     String priceValue = String.valueOf(Integer.parseInt(priceElement.text()));
-                                    Log.d("price value beef", priceValue+"\n");
+                                    //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
                                     nfe.printStackTrace();
@@ -314,7 +314,7 @@ public class Scraper extends Activity {
             }
 
 
-            Log.d("habijabi", record);
+            //Log.d("habijabi", record);
             //Log.d("productname", productname);
 
             FILENAME = "chicken-data.csv";
@@ -434,6 +434,92 @@ public class Scraper extends Activity {
                 out.close();
 
             }catch (Exception e){
+                e.printStackTrace();
+            }
+
+            //scraping data for mutton
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/meat-new";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if(productname.indexOf("Mutton") != -1){
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    Log.d("mutton chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    //Log.d("mutton price size", discountedPrice.size()+"");
+                    if(discountedPrice.size() == 0){
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replace(",","")));
+                                    Log.d("price value mutton", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                    else{
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    Log.d("price value mutton", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "mutton-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
                 e.printStackTrace();
             }
 
