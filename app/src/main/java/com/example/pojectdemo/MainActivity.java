@@ -22,9 +22,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.nio.charset.StandardCharsets;
 
-
 public class MainActivity extends AppCompatActivity {
-    private static final int SPLASH_SCREEN = 5000;
+    private static final int SPLASH_SCREEN = 3000;
     Animation topAnim, bottomAnim;
     ImageView image;
     TextView logo, slogan, slogan2;
@@ -36,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
 
         Scraper scraper = new Scraper();
         scraper.scrape(getApplicationContext());
