@@ -54,32 +54,32 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
             button5.setText("fish");
         }
         else if(productName.equals("personal_care")){
-            button1.setText("beef2");
-            button2.setText("mutton");
-            button3.setText("chicken");
-            button4.setText("egg");
-            button5.setText("fish");
+            button1.setText("toothpaste");
+            button2.setText("soap");
+            button3.setText("shampoo");
+            button4.setText("handwash");
+            button5.setText("sanitizer");
         }
         else if(productName.equals("stationary")){
-            button1.setText("beef3");
-            button2.setText("mutton");
-            button3.setText("chicken");
-            button4.setText("egg");
-            button5.setText("fish");
+            button1.setText("notebook");
+            button2.setText("pen");
+            button3.setText("pencil");
+            button4.setText("color-pencil");
+            button5.setText("eraser");
         }
         else if(productName.equals("processed_food")){
-            button1.setText("beef4");
-            button2.setText("mutton");
-            button3.setText("chicken");
-            button4.setText("egg");
-            button5.setText("fish");
+            button1.setText("chips");
+            button2.setText("chanachur");
+            button3.setText("beverage");
+            button4.setText("cake");
+            button5.setText("biscuit");
         }
         else if(productName.equals("vegetables")){
-            button1.setText("beef5");
-            button2.setText("mutton");
-            button3.setText("chicken");
-            button4.setText("egg");
-            button5.setText("fish");
+            button1.setText("aloo");
+            button2.setText("fulkopi");
+            button3.setText("misti-kumra");
+            button4.setText("tomato");
+            button5.setText("lebu");
         }
     }
 
