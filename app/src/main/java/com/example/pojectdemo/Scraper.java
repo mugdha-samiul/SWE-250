@@ -136,7 +136,7 @@ public class Scraper extends Activity {
                             record += "\n";
                         }
                     }
-                    }
+                }
             }
 
 
