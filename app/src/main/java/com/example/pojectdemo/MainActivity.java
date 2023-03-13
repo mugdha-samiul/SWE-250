@@ -36,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        //Scraper scraper = new Scraper();
-        //scraper.scrape(getApplicationContext());
+        Scraper scraper = new Scraper();
+        scraper.scrape(getApplicationContext());
 
         topAnim = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
         bottomAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
