@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="160dp"
-    android:layout_height="300dp"
+    android:layout_height="360dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="2dp"
     app:cardElevation="8dp"
@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="15dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/LemonChiffon">
 
         <ImageView
             android:id="@+id/featured_image"
@@ -42,6 +43,7 @@
             android:id="@+id/featured_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:text="LARGEST ONLINE GROCARY MARKET RIGHT NOW IN BANGLADESH">
         </TextView>
     </LinearLayout>

@@ -12,6 +12,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.example.pojectdemo.home.Featured_Adapter;
+import com.example.pojectdemo.home.featuredHelper;
+
+import java.util.ArrayList;
+
 public class MainDashboard extends AppCompatActivity implements View.OnClickListener {
     private Intent intent;
 
@@ -22,6 +27,7 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
     private LinearLayout VegetablesButton;
 
     RecyclerView featured_recycler;
+    RecyclerView.Adapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +56,14 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
         featured_recycler.setHasFixedSize(true);
         featured_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
+        ArrayList<featuredHelper> featuredLocations = new ArrayList<>();
+
+        featuredLocations.add(new featuredHelper(R.drawable.featured_chaldal, "CHALDAL", "CHALDAL is currently the biggest online grocary marketplace in Bangladesh"));
+        featuredLocations.add(new featuredHelper(R.drawable.featured_othoba, "OTHOBA", "OTHOBA is one of the fastest growing online marketplace in Bangladesh"));
+        featuredLocations.add(new featuredHelper(R.drawable.featured_sobjibazaar, "SOBJIBAZAAR", "sobjibazar is also a potential newcomer online shop in BD"));
+
+        adapter = new Featured_Adapter(featuredLocations);
+        featured_recycler.setAdapter(adapter);
     }
 
     @Override
