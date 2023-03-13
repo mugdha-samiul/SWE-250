@@ -1,6 +1,7 @@
 package com.example.pojectdemo;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -20,6 +21,8 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
     private LinearLayout ProcessedFoodButton;
     private LinearLayout VegetablesButton;
 
+    RecyclerView featured_recycler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,13 +35,23 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
         StationaryButton = (LinearLayout)this.findViewById(R.id.stationary);
         ProcessedFoodButton = (LinearLayout)this.findViewById(R.id.processedfood);
         VegetablesButton = (LinearLayout)this.findViewById(R.id.vegetables);
+        featured_recycler = this.findViewById(R.id.Featured_Recycler);
 
         MeatFishButton.setOnClickListener(this);
         PersonalCareButton.setOnClickListener(this);
         StationaryButton.setOnClickListener(this);
         ProcessedFoodButton.setOnClickListener(this);
         VegetablesButton.setOnClickListener(this);
+
+        featured_recycler();
     }
+
+    private void featured_recycler() {
+        featured_recycler.setHasFixedSize(true);
+        featured_recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+    }
+
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.meatandfish) {
