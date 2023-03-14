@@ -1,109 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/yellow"
-    tools:context=".Element_One_Activity">
+    android:layout_height="match_parent">
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ImageView
-            android:id="@+id/ss"
-            android:src="@drawable/logo3"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/teal_700"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-        />
-        <TextView
-            android:id="@+id/pp"
-            android:text="@string/riceChalDal"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/teal_700"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+    <!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    xmlns:tools="http://schemas.android.com/tools"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:orientation="vertical"-->
+    <!--    android:background="@color/yellow"-->
+    <!--    tools:context=".Element_One_Activity">-->
 
-        <TextView
-            android:id="@+id/qq"
-            android:text="@string/riceChalDal"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textStyle="bold"
-            android:textSize="25dp"
-            android:textAlignment="viewStart"
-            android:textColor="@color/teal_700"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical"-->
+    <!--        android:padding="10dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        android:gravity="center">-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/header_title"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="@string/title"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textAllCaps="true"-->
+    <!--            android:textColor="#6E3BAC"-->
+    <!--            android:textSize="25sp"-->
+    <!--            android:textStyle="bold"-->
+    <!--            />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/header_subtitle"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="select an item you want\n\n\n"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textAllCaps="true"-->
+    <!--            android:textColor="@color/black"-->
+    <!--            android:textSize="18sp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ITEM1"-->
+    <!--            android:layout_width="176dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:text="item1"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textStyle="bold"-->
+    <!--            style="@style/Widget.Material3.ActionMode"/>-->
+
+    <!--        <TextView-->
+    <!--            android:text="\n"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ITEM2"-->
+    <!--            android:layout_width="176dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:text="item2"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textStyle="bold"/>-->
+
+    <!--        <TextView-->
+    <!--            android:text="\n"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ITEM3"-->
+    <!--            android:layout_width="176dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:text="ITEM3"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textStyle="bold"/>-->
+
+    <!--        <TextView-->
+    <!--            android:text="\n"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ITEM4"-->
+    <!--            android:layout_width="176dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:text="ITEM4"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textStyle="bold"/>-->
+
+    <!--        <TextView-->
+    <!--            android:text="\n"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/ITEM5"-->
+    <!--            android:layout_width="176dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:text="ITEM5"-->
+    <!--            android:textAlignment="center"-->
+    <!--            android:textStyle="bold"/>-->
+
+    <!--        <TextView-->
+    <!--            android:text="\n"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"/>-->
+    <!--    </LinearLayout>-->
     </LinearLayout>
-</ScrollView>
 
-
-<!--    package com.example.pojectdemo;-->
-
-<!--    import androidx.appcompat.app.AppCompatActivity;-->
-
-<!--    import android.os.Bundle;-->
-<!--    import android.view.View;-->
-<!--    import android.view.View;-->
-<!--    import android.widget.Button;-->
-<!--    import android.widget.ImageView;-->
-<!--    import android.widget.TextView;-->
-
-<!--    public class CategorySegment extends AppCompatActivity {-->
-<!--    //private ImageView imageView;-->
-<!--    private TextView textView;-->
-<!--    private TextView textView2;-->
-<!--    @Override-->
-<!--    protected void onCreate(Bundle savedInstanceState) {-->
-<!--    super.onCreate(savedInstanceState);-->
-<!--    setContentView(R.layout.activity_category_segment);-->
-
-<!--    textView = (TextView)findViewById(R.id.pp);-->
-<!--    textView2 = (TextView)findViewById(R.id.qq);-->
-
-<!--    Bundle bundle = getIntent().getExtras();-->
-<!--    if(bundle != null){-->
-<!--    String productName = bundle.getString("category");-->
-<!--    ShowDescription(productName);-->
-<!--    }-->
-<!--    }-->
-<!--    private void ShowDescription(String productName) {-->
-<!--    if(productName.equals("meat_fish")){-->
-<!--    textView.setText(R.string.riceChalDal);-->
-<!--    textView2.setText(R.string.Story);-->
-<!--    }-->
-<!--    else if(productName.equals("personal_care")){-->
-<!--    textView.setText(R.string.eggChalDal);-->
-<!--    textView2.setText(R.string.Story);-->
-<!--    }-->
-<!--    else if(productName.equals("stationary")){-->
-<!--    textView.setText(R.string.potatoChalDal);-->
-<!--    textView2.setText(R.string.Story);-->
-<!--    }-->
-<!--    else if(productName.equals("processed_food")){-->
-<!--    textView.setText(R.string.bagChalDal);-->
-<!--    textView2.setText(R.string.Story);-->
-<!--    }-->
-<!--    else if(productName.equals("vegetables")){-->
-<!--    textView.setText(R.string.bottleChalDal);-->
-<!--    textView2.setText(R.string.Story);-->
-<!--    }-->
-<!--    }-->
-<!--    }-->

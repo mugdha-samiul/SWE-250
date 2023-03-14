@@ -11,26 +11,45 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.LinearLayout;
 
 public class CategorySegment extends AppCompatActivity implements View.OnClickListener{
     private Intent intent;
 
-    private Button button1;
-    private Button button2;
-    private Button button3;
-    private Button button4;
-    private Button button5;
+    private LinearLayout button1;
+    private LinearLayout button2;
+    private LinearLayout button3;
+    private LinearLayout button4;
+    private LinearLayout button5;
+    private TextView name1;
+    private TextView name2;
+    private TextView name3;
+    private TextView name4;
+    private TextView name5;
+    private String str1 = "";
+    private String str2 = "";
+    private String str3 = "";
+    private String str4 = "";
+    private String str5 = "";
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_category_segment);
 
-        button1 = (Button)findViewById(R.id.ITEM1);
-        button2 = (Button)findViewById(R.id.ITEM2);
-        button3 = (Button)findViewById(R.id.ITEM3);
-        button4 = (Button)findViewById(R.id.ITEM4);
-        button5 = (Button)findViewById(R.id.ITEM5);
+        button1 = (LinearLayout)this.findViewById(R.id.ITEM1);
+        button2 = (LinearLayout)this.findViewById(R.id.ITEM2);
+        button3 = (LinearLayout)this.findViewById(R.id.ITEM3);
+        button4 = (LinearLayout)this.findViewById(R.id.ITEM4);
+        button5 = (LinearLayout)this.findViewById(R.id.ITEM5);
+
+        name1 = (TextView) this.findViewById(R.id.ITEM1name);
+        name2 = (TextView) this.findViewById(R.id.ITEM2name);
+        name3 = (TextView) this.findViewById(R.id.ITEM3name);
+        name4 = (TextView) this.findViewById(R.id.ITEM4name);
+        name5 = (TextView) this.findViewById(R.id.ITEM5name);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -47,88 +66,93 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
     }
     private void ShowDescription(String productName) {
         if(productName.equals("meat_fish")){
-            button1.setText("beef");
-            button2.setText("mutton");
-            button3.setText("chicken");
-            button4.setText("egg");
-            button5.setText("fish");
+            name1.setText("beef");
+            name2.setText("mutton");
+            name3.setText("chicken");
+            name4.setText("egg");
+            name5.setText("fish");
+            str1 = "beef";
+            str2 = "mutton";
+            str3 = "chicken";
+            str4 = "egg";
+            str5 = "fish";
         }
         else if(productName.equals("personal_care")){
-            button1.setText("toothpaste");
-            button2.setText("soap");
-            button3.setText("shampoo");
-            button4.setText("handwash");
-            button5.setText("sanitizer");
+            name1.setText("toothpaste");
+            name2.setText("soap");
+            name3.setText("shampoo");
+            name4.setText("handwash");
+            name5.setText("sanitizer");
+            str1 = "toothpaste";
+            str2 = "soap";
+            str3 = "shampoo";
+            str4 = "handwash";
+            str5 = "sanitizer";
         }
         else if(productName.equals("stationary")){
-            button1.setText("notebook");
-            button2.setText("pen");
-            button3.setText("pencil");
-            button4.setText("color-pencil");
-            button5.setText("eraser");
+            name1.setText("notebook");
+            name2.setText("pen");
+            name3.setText("pencil");
+            name4.setText("color-pencil");
+            name5.setText("eraser");
+            str1 = "notebook";
+            str2 = "pen";
+            str3 = "pencil";
+            str4 = "color-pencil";
+            str5 = "eraser";
         }
         else if(productName.equals("processed_food")){
-            button1.setText("chips");
-            button2.setText("chanachur");
-            button3.setText("beverage");
-            button4.setText("cake");
-            button5.setText("biscuit");
+            name1.setText("chips");
+            name2.setText("chanachur");
+            name3.setText("beverage");
+            name4.setText("cake");
+            name5.setText("biscuit");
+            str1 = "chips";
+            str2 = "chanachur";
+            str3 = "beverage";
+            str4 = "cake";
+            str5 = "biscuit";
         }
         else if(productName.equals("vegetables")){
-            button1.setText("aloo");
-            button2.setText("fulkopi");
-            button3.setText("misti-kumra");
-            button4.setText("tomato");
-            button5.setText("lebu");
+            name1.setText("aloo");
+            name2.setText("fulkopi");
+            name3.setText("misti-kumra");
+            name4.setText("tomato");
+            name5.setText("lebu");
+            str1 = "aloo";
+            str2 = "fulkopi";
+            str3 = "misti-kumra";
+            str4 = "tomato";
+            str5 = "lebu";
         }
     }
 
     @Override
     public void onClick(View view) {
-        Button b;
-        String specific_product_name = "";
         if(view.getId() == R.id.ITEM1){
-            b = (Button) view;
-            specific_product_name = b.getText().toString();
-
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", specific_product_name);
+            intent.putExtra("product", str1);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM2){
-            b = (Button) view;
-            specific_product_name = b.getText().toString();
-
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", specific_product_name);
+            intent.putExtra("product", str2);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM3){
-            b = (Button) view;
-            specific_product_name = b.getText().toString();
-
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", specific_product_name);
+            intent.putExtra("product", str3);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM4){
-            b = (Button) view;
-            specific_product_name = b.getText().toString();
-
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", specific_product_name);
+            intent.putExtra("product", str4);
             startActivity(intent);
         }
         if(view.getId() == R.id.ITEM5){
-            b = (Button) view;
-            specific_product_name = b.getText().toString();
-
             intent = new Intent(CategorySegment.this, ProductInfo.class);
-            intent.putExtra("product", specific_product_name);
+            intent.putExtra("product", str5);
             startActivity(intent);
         }
-        //intent = new Intent(CategorySegment.this, ProductInfo.class);
-        //intent.putExtra("product", specific_product_name);
-        //startActivity(intent);
     }
 }

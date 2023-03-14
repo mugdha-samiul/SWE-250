@@ -265,44 +265,52 @@
 
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="30dp"
-                android:padding="10dp">
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:layout_marginTop="30dp"-->
+<!--                android:padding="10dp">-->
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MOST VIEWED ITEMS!!"
-                        android:textSize="15dp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/marko_one"
-                        android:textAllCaps="true" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="view all"
-                        android:textColor="@color/black"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"/>
-                </RelativeLayout>
+<!--                <RelativeLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="MOST VIEWED ITEMS!!"-->
+<!--                        android:textSize="15dp"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:fontFamily="@font/marko_one"-->
+<!--                        android:textAllCaps="true" />-->
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="view all"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:layout_alignParentRight="true"-->
+<!--                        android:layout_centerVertical="true"/>-->
+<!--                </RelativeLayout>-->
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:background="@color/Wheat"/>
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/mvvv"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:background="@color/Wheat"/>-->
+<!--            </LinearLayout>-->
 
-            </LinearLayout>
+
+<!--                                <TextView-->
+<!--                                    android:layout_width="wrap_content"-->
+<!--                                    android:layout_height="wrap_content"-->
+<!--                                    android:text="MOST VIEWED ITEMS!!"-->
+<!--                                    android:textSize="15dp"-->
+<!--                                    android:textColor="@color/black"-->
+<!--                                    android:fontFamily="@font/marko_one"-->
+<!--                                    android:textAllCaps="true"-->
+<!--                                    android:gravity="center"/>-->
+
 
         </LinearLayout>
-
     </ScrollView>
-
-
-
 </LinearLayout>

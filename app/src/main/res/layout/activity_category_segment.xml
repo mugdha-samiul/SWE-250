@@ -1,119 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/yellow"
-    tools:context=".Element_One_Activity">
+    android:background="@color/LemonChiffon"
+    tools:context=".CategorySegment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="109dp"
+            android:layout_marginEnd="135dp"
+            android:textColor="@color/Brown"
+            android:fontFamily="@font/bangers"
+
+            android:padding="20px"
+            android:text="PRICE \n SPY "
+            android:textSize="48sp" />
+    </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:textAlignment="center"
-        android:gravity="center">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
 
-        <TextView
-            android:id="@+id/header_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="#6E3BAC"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            />
+        android:paddingBottom="1px">
 
-        <TextView
-            android:id="@+id/header_subtitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="select an item you want\n\n\n"
-            android:textAlignment="center"
-            android:textAllCaps="true"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <Button
+        <LinearLayout
             android:id="@+id/ITEM1"
-            android:layout_width="176dp"
+            android:padding="20dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/white"
-            android:text="item1"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            style="@style/Widget.Material3.ActionMode"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:text="\n"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/card_1"
+                android:elevation="8dp"
+                android:layout_margin="10dp">
 
-        <Button
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/protein"></ImageView>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ITEM1name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="MEAT AND \nFISH"
+                android:fontFamily="@font/marko_one"
+                android:textColor="@color/black">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20dp"
             android:id="@+id/ITEM2"
-            android:layout_width="176dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/white"
-            android:text="item2"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
+            android:orientation="vertical">
 
-        <TextView
-            android:text="\n"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/card_1"
+                android:elevation="8dp"
+                android:layout_margin="10dp">
 
-        <Button
-            android:id="@+id/ITEM3"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/white"
-            android:text="ITEM3"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/stationary"></ImageView>
+            </RelativeLayout>
 
-        <TextView
-            android:text="\n"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/ITEM2name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="STATIONARY"
+                android:fontFamily="@font/marko_one"
+                android:textColor="@color/black">
 
-        <Button
-            android:id="@+id/ITEM4"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/white"
-            android:text="ITEM4"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
+            </TextView>
 
-        <TextView
-            android:text="\n"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/ITEM5"
-            android:layout_width="176dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:background="@color/white"
-            android:text="ITEM5"
-            android:textAlignment="center"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:text="\n"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
     </LinearLayout>
-</ScrollView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+        android:paddingBottom="1px">
+
+        <LinearLayout
+            android:id="@+id/ITEM3"
+            android:padding="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/card_1"
+                android:elevation="8dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/protein"></ImageView>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ITEM3name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="MEAT AND \nFISH"
+                android:fontFamily="@font/marko_one"
+                android:textColor="@color/black">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:padding="20dp"
+            android:id="@+id/ITEM4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/card_1"
+                android:elevation="8dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/stationary"></ImageView>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ITEM4name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="STATIONARY"
+                android:fontFamily="@font/marko_one"
+                android:textColor="@color/black">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingBottom="1px">
+
+        <LinearLayout
+            android:padding="25dp"
+            android:id="@+id/ITEM5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/card_1"
+                android:elevation="8dp"
+                android:layout_margin="10dp">
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/stationary"></ImageView>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/ITEM5name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:gravity="center_horizontal"
+                android:text="STATIONARY"
+                android:fontFamily="@font/marko_one"
+                android:textColor="@color/black">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
