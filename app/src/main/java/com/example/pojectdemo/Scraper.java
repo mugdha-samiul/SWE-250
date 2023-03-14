@@ -38,14 +38,13 @@ public class Scraper extends Activity {
         //setContentView(R.layout.activity_main);
         setVisible(false);
 
-        File root = new File(getFilesDir()+FILENAME);
-        if(!root.exists()){
+        File root = new File(getFilesDir() + FILENAME);
+        if (!root.exists()) {
             root.mkdirs();
         }
         chicken = new File(root, FILENAME);
 
     }
-
 
 
     public void scrape(Context context) {
@@ -55,7 +54,8 @@ public class Scraper extends Activity {
 
     private class Content extends AsyncTask<Void, Void, Void> {
         Context ContentContext;
-        Content(Context context){
+
+        Content(Context context) {
             ContentContext = context;
         }
 
@@ -96,21 +96,21 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Beef") != -1){
+                if (productname.indexOf("Beef") != -1) {
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
 
                     //Log.d("beef chaldal", record);
                     Elements discountedPrice = product.select(".discountedPrice");
-                    if(discountedPrice.size() == 0){
+                    if (discountedPrice.size() == 0) {
                         discountedPrice = product.select(".price");
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -119,14 +119,13 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    }
-                    else{
+                    } else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -146,7 +145,7 @@ public class Scraper extends Activity {
             String FILENAME = "beef-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -179,9 +178,9 @@ public class Scraper extends Activity {
             //Log.d("price size", "price size " + price.size());
 
             int n = name.size();
-            for(int i=0; i<n; i++){
+            for (int i = 0; i < n; i++) {
                 String productname = name.get(i).text();
-                if(productname.indexOf("Beef") != -1){
+                if (productname.indexOf("Beef") != -1) {
                     record += url;
                     record += " ,";
                     //adding name
@@ -200,7 +199,7 @@ public class Scraper extends Activity {
             //Log.d("habijabi", record);
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -233,13 +232,13 @@ public class Scraper extends Activity {
             nameString = new String[n];//contains names of the products of sobijbazaar
 
             //retrieving names from product-title
-            for(Element element:productTitle){
-                int i=0;
+            for (Element element : productTitle) {
+                int i = 0;
                 String name_value = "";
                 record += url;
                 record += " ,";
                 Elements a = element.getElementsByTag("a");
-                for(Element a_element: a){
+                for (Element a_element : a) {
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
                     record += name_value;
@@ -249,7 +248,7 @@ public class Scraper extends Activity {
 
                 //adding price
                 String price_element_text = price.get(i).text();
-                record += price_element_text.substring(0, price_element_text.length()-1);
+                record += price_element_text.substring(0, price_element_text.length() - 1);
                 record += '\n';
                 nameString[i] = name_value;
                 i++;
@@ -257,13 +256,13 @@ public class Scraper extends Activity {
 
             //Log.d("habijabi", record);
 
-            try{
+            try {
 
                 FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -293,21 +292,21 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Chicken") != -1){
+                if (productname.indexOf("Chicken") != -1) {
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
 
                     //Log.d("beef chaldal", record);
                     Elements discountedPrice = product.select(".discountedPrice");
-                    if(discountedPrice.size() == 0){
+                    if (discountedPrice.size() == 0) {
                         discountedPrice = product.select(".price");
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -316,14 +315,13 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    }
-                    else{
+                    } else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -343,7 +341,7 @@ public class Scraper extends Activity {
             FILENAME = "chicken-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -377,7 +375,7 @@ public class Scraper extends Activity {
             //Log.d("price size", "price size " + price.size());
 
             n = name.size();
-            for(int i=0; i<n; i++){
+            for (int i = 0; i < n; i++) {
                 record += url;
                 record += " ,";
                 //adding name
@@ -394,7 +392,7 @@ public class Scraper extends Activity {
             //Log.d("habijabi", record);
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -427,13 +425,13 @@ public class Scraper extends Activity {
             nameString = new String[n];//contains names of the products of sobijbazaar
 
             //retrieving names from product-title
-            for(Element element:productTitle){
-                int i=0;
+            for (Element element : productTitle) {
+                int i = 0;
                 String name_value = "";
                 record += url;
                 record += " ,";
                 Elements a = element.getElementsByTag("a");
-                for(Element a_element: a){
+                for (Element a_element : a) {
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
                     record += name_value;
@@ -443,7 +441,7 @@ public class Scraper extends Activity {
 
                 //adding price
                 String price_element_text = price.get(i).text();
-                record += price_element_text.substring(0, price_element_text.length()-1);
+                record += price_element_text.substring(0, price_element_text.length() - 1);
                 record += '\n';
                 nameString[i] = name_value;
                 i++;
@@ -451,13 +449,13 @@ public class Scraper extends Activity {
 
             //Log.d("habijabi", record);
 
-            try{
+            try {
 
                 FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -485,7 +483,7 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Mutton") != -1){
+                if (productname.indexOf("Mutton") != -1) {
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
@@ -493,15 +491,15 @@ public class Scraper extends Activity {
                     Log.d("mutton chaldal", record);
                     Elements discountedPrice = product.select(".discountedPrice");
                     //Log.d("mutton price size", discountedPrice.size()+"");
-                    if(discountedPrice.size() == 0){
+                    if (discountedPrice.size() == 0) {
                         discountedPrice = product.select(".price");
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replace(",","")));
-                                    Log.d("price value mutton", priceValue+"\n");
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replace(",", "")));
+                                    Log.d("price value mutton", priceValue + "\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
                                     nfe.printStackTrace();
@@ -509,15 +507,14 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    }
-                    else{
+                    } else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
-                                    Log.d("price value mutton", priceValue+"\n");
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    Log.d("price value mutton", priceValue + "\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
                                     nfe.printStackTrace();
@@ -536,7 +533,7 @@ public class Scraper extends Activity {
             FILENAME = "mutton-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -568,9 +565,9 @@ public class Scraper extends Activity {
             //Log.d("price size", "price size " + price.size());
 
             n = name.size();
-            for(int i=0; i<n; i++){
+            for (int i = 0; i < n; i++) {
                 String productname = name.get(i).text();
-                if(productname.indexOf("Mutton") != -1){
+                if (productname.indexOf("Mutton") != -1) {
                     record += url;
                     record += " ,";
                     //adding name
@@ -579,7 +576,8 @@ public class Scraper extends Activity {
 
                     //adding price
                     String price_element_text = price.get(i).text();
-                    record += price_element_text.substring(3);
+                    //record += price_element_text.substring(3);
+                    record += price_element_text;
                     record += '\n';
                 }
 
@@ -589,7 +587,7 @@ public class Scraper extends Activity {
             //Log.d("habijabi", record);
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -621,13 +619,13 @@ public class Scraper extends Activity {
             nameString = new String[n];//contains names of the products of sobijbazaar
 
             //retrieving names from product-title
-            for(Element element:productTitle){
-                int i=0;
+            for (Element element : productTitle) {
+                int i = 0;
                 String name_value = "";
                 record += url;
                 record += " ,";
                 Elements a = element.getElementsByTag("a");
-                for(Element a_element: a){
+                for (Element a_element : a) {
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
                     record += name_value;
@@ -637,8 +635,8 @@ public class Scraper extends Activity {
 
                 //adding price
                 String price_element_text = price.get(i).text();
-                price_element_text = price_element_text.substring(0, price_element_text.length()-1);
-                record += price_element_text.substring(0, price_element_text.length()-1);
+                price_element_text = price_element_text.substring(0, price_element_text.length() - 1);
+                record += price_element_text.substring(0, price_element_text.length() - 1);
                 record += '\n';
                 nameString[i] = name_value;
                 i++;
@@ -646,16 +644,15 @@ public class Scraper extends Activity {
 
             //Log.d("habijabi", record);
 
-            try{
+            try {
 
                 FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-
 
 
             //scraping data for egg
@@ -682,21 +679,21 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Egg") != -1){
+                if (productname.indexOf("Egg") != -1) {
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
 
                     //Log.d("beef chaldal", record);
                     Elements discountedPrice = product.select(".discountedPrice");
-                    if(discountedPrice.size() == 0){
+                    if (discountedPrice.size() == 0) {
                         discountedPrice = product.select(".price");
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -705,14 +702,13 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    }
-                    else{
+                    } else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -732,7 +728,7 @@ public class Scraper extends Activity {
             FILENAME = "egg-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -765,7 +761,7 @@ public class Scraper extends Activity {
             //Log.d("price size", "price size " + price.size());
 
             n = name.size();
-            for(int i=0; i<n; i++){
+            for (int i = 0; i < n; i++) {
                 record += url;
                 record += " ,";
                 //adding name
@@ -782,7 +778,7 @@ public class Scraper extends Activity {
             //Log.d("habijabi", record);
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -815,13 +811,13 @@ public class Scraper extends Activity {
             nameString = new String[n];//contains names of the products of sobijbazaar
 
             //retrieving names from product-title
-            for(Element element:productTitle){
-                int i=0;
+            for (Element element : productTitle) {
+                int i = 0;
                 String name_value = "";
                 record += url;
                 record += " ,";
                 Elements a = element.getElementsByTag("a");
-                for(Element a_element: a){
+                for (Element a_element : a) {
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
                     record += name_value;
@@ -831,7 +827,7 @@ public class Scraper extends Activity {
 
                 //adding price
                 String price_element_text = price.get(i).text();
-                record += price_element_text.substring(0, price_element_text.length()-1);
+                record += price_element_text.substring(0, price_element_text.length() - 1);
                 record += '\n';
                 nameString[i] = name_value;
                 i++;
@@ -839,13 +835,13 @@ public class Scraper extends Activity {
 
             //Log.d("habijabi", record);
 
-            try{
+            try {
 
                 FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             //sobjibazaar: duck egg
@@ -870,13 +866,13 @@ public class Scraper extends Activity {
             nameString = new String[n];//contains names of the products of sobijbazaar
 
             //retrieving names from product-title
-            for(Element element:productTitle){
-                int i=0;
+            for (Element element : productTitle) {
+                int i = 0;
                 String name_value = "";
                 record += url;
                 record += " ,";
                 Elements a = element.getElementsByTag("a");
-                for(Element a_element: a){
+                for (Element a_element : a) {
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
                     record += name_value;
@@ -886,7 +882,7 @@ public class Scraper extends Activity {
 
                 //adding price
                 String price_element_text = price.get(i).text();
-                record += price_element_text.substring(0, price_element_text.length()-1);
+                record += price_element_text.substring(0, price_element_text.length() - 1);
                 record += '\n';
                 nameString[i] = name_value;
                 i++;
@@ -894,13 +890,13 @@ public class Scraper extends Activity {
 
             //Log.d("habijabi", record);
 
-            try{
+            try {
 
                 FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
 
-            }catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -930,21 +926,21 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Fish") != -1){
+                if (productname.indexOf("Fish") != -1) {
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
 
                     //Log.d("beef chaldal", record);
                     Elements discountedPrice = product.select(".discountedPrice");
-                    if(discountedPrice.size() == 0){
+                    if (discountedPrice.size() == 0) {
                         discountedPrice = product.select(".price");
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -953,14 +949,13 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    }
-                    else{
+                    } else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {
 
                                 try {
-                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
                                     //Log.d("price value beef", priceValue+"\n");
                                     record += priceValue;
                                 } catch (NumberFormatException nfe) {
@@ -980,7 +975,7 @@ public class Scraper extends Activity {
             FILENAME = "fish-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -1014,7 +1009,723 @@ public class Scraper extends Activity {
                 //productname += ',';
                 String productname = product.select(".name").text();
                 //Log.d("lfjs",productname.indexOf("Beef")+"");
-                if(productname.indexOf("Fish") != -1){
+                if (productname.indexOf("Fish") != -1) {
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    //Log.d("beef chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    if (discountedPrice.size() == 0) {
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    } else {
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "fish-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                //url = "https://www.othoba.com/src?q=eggs&c=713&minprice=NaN&maxprice=NaN"; //othoba
+                url = "https://www.othoba.com/fish";
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            Log.d("othoba name size", "name size " + name.size());
+            Log.d("othoba price size", "price size " + price.size());
+
+            n = name.size();
+            for (int i = 0; i < n; i++) {
+                record += url;
+                record += " ,";
+                //adding name
+                record += name.get(i).text();
+                record += ",";
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                Log.d("othoba fish price", price_element_text);
+                //record += price_element_text.substring(3);
+                record += price_element_text;
+                record += '\n';
+            }
+
+
+            Log.d("othoba fish", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //sobjibazaar fish
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/fish#/pageSize=20&orderBy=0"; //sobjibazaar
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for (Element element : productTitle) {
+                int i = 0;
+                String name_value = "";
+                record += url;
+                record += " ,";
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    record += name_value;
+                    record += ",";
+                }
+
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                record += price_element_text.substring(0, price_element_text.length() - 1);
+                record += '\n';
+                nameString[i] = name_value;
+                i++;
+            }
+
+            //Log.d("habijabi", record);
+
+            try {
+
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            FILENAME = "fish-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                //url = "https://www.othoba.com/src?q=eggs&c=713&minprice=NaN&maxprice=NaN"; //othoba
+                url = "https://www.othoba.com/fish";
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            Log.d("othoba name size", "name size " + name.size());
+            Log.d("othoba price size", "price size " + price.size());
+
+            n = name.size();
+            for (int i = 0; i < n; i++) {
+                record += url;
+                record += " ,";
+                //adding name
+                record += name.get(i).text();
+                record += ",";
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                Log.d("othoba fish price", price_element_text);
+                //record += price_element_text.substring(3);
+                record += price_element_text;
+                record += '\n';
+            }
+
+
+            Log.d("othoba fish", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //sobjibazaar fish
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/fish#/pageSize=20&orderBy=0"; //sobjibazaar
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for (Element element : productTitle) {
+                int i = 0;
+                String name_value = "";
+                record += url;
+                record += " ,";
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    record += name_value;
+                    record += ",";
+                }
+
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                record += price_element_text.substring(0, price_element_text.length() - 1);
+                record += '\n';
+                nameString[i] = name_value;
+                i++;
+            }
+
+            //Log.d("habijabi", record);
+
+            try {
+
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //scraping data for toothpaste
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/toothpastes";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", String.valueOf(products.size()));
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if (productname.indexOf("Chicken") != -1) {
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    //Log.d("beef chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    if (discountedPrice.size() == 0) {
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    } else {
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "toothpaste-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                url = "https://www.othoba.com/src?q=toothpaste"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            //Log.d("name size", "name size " + name.size() );
+            //Log.d("price size", "price size " + price.size());
+
+            n = name.size();
+            for (int i = 0; i < n; i++) {
+                record += url;
+                record += " ,";
+                //adding name
+                record += name.get(i).text();
+                record += ",";
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                record += price_element_text.substring(3);
+                record += '\n';
+            }
+
+
+            //Log.d("habijabi", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //scraping data from sobjibazaar
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/filterSearch?q=toothpaste#/pageSize=6&orderBy=0"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for (Element element : productTitle) {
+                int i = 0;
+                String name_value = "";
+                record += url;
+                record += " ,";
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    record += name_value;
+                    record += ",";
+                }
+
+
+                //adding price
+                String price_element_text = price.get(i).text();
+                record += price_element_text.substring(0, price_element_text.length() - 1);
+                record += '\n';
+                nameString[i] = name_value;
+                i++;
+            }
+
+            //Log.d("habijabi", record);
+
+            try {
+
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //scraping data for soap
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/search/soap";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", String.valueOf(products.size()));
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if (productname.indexOf("Soap") != -1) {
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    //Log.d("beef chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    if (discountedPrice.size() == 0) {
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    } else {
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",", "")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "soap-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_PRIVATE);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                url = "https://www.othoba.com/src?q=soap"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            //Log.d("name size", "name size " + name.size() );
+            //Log.d("price size", "price size " + price.size());
+
+            n = name.size();
+            for (int i = 0; i < n; i++) {
+                record += url;
+                record += " ,";
+
+                if (name.get(i).text().indexOf("Handwash") == -1) {
+                    //adding name
+                    record += name.get(i).text();
+                    record += ",";
+
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(3);
+                    record += '\n';
+                }
+
+            }
+
+
+            //Log.d("habijabi", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //scraping data from sobjibazaar
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/filterSearch?q=soap&cid=0&mid=0&pf=&pt=&adv=false&isc=false&sid=false#/pageSize=6&orderBy=0"; //sobjibazaar
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for (Element element : productTitle) {
+                int i = 0;
+                String name_value = "";
+
+
+                Boolean soap = false;
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    if (name_value.indexOf("Handwash") == -1) {
+                        record += url;
+                        record += " ,";
+                        record += name_value;
+                        record += ",";
+                        soap = true;
+                    }
+
+                }
+
+                if (soap) {
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(0, price_element_text.length() - 1);
+                    record += '\n';
+                    nameString[i] = name_value;
+                    i++;
+                }
+
+            }
+
+            //Log.d("habijabi", record);
+
+            try {
+
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+            //scraping data for shampoo
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/search/shampoo";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", String.valueOf(products.size()));
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if(productname.indexOf("Shampoo") != -1){
                     record += url + " ,";
                     record += product.select(".name").text();
                     record += ',';
@@ -1061,10 +1772,10 @@ public class Scraper extends Activity {
             //Log.d("habijabi", record);
             //Log.d("productname", productname);
 
-            FILENAME = "fish-data.csv";
+            FILENAME = "shampoo-data.csv";
 
             try {
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
                 //Log.d("file created", "file created");
                 out.write(record.getBytes(StandardCharsets.UTF_8));
                 out.close();
@@ -1076,14 +1787,12 @@ public class Scraper extends Activity {
             }
 
 
-
             //scraping data from othoba.com
             record = "";
             url = "";
 
             try {
-                //url = "https://www.othoba.com/src?q=eggs&c=713&minprice=NaN&maxprice=NaN"; //othoba
-                url = "https://www.othoba.com/fish";
+                url = "https://www.othoba.com/src?q=shampoo"; //othoba
                 doc = Jsoup.connect(url).get();
                 //Log.d("scraped successfully", "scraped successfully");
 
@@ -1103,14 +1812,16 @@ public class Scraper extends Activity {
             for(int i=0; i<n; i++){
                 record += url;
                 record += " ,";
-                //adding name
-                record += name.get(i).text();
-                record += ",";
+                if(name.get(i).text().indexOf("Shampoo") != -1){
+                    //adding name
+                    record += name.get(i).text();
+                    record += ",";
 
-                //adding price
-                String price_element_text = price.get(i).text();
-                record += price_element_text.substring(3);
-                record += '\n';
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(3);
+                    record += '\n';
+                }
             }
 
 
@@ -1128,12 +1839,420 @@ public class Scraper extends Activity {
                 e.printStackTrace();
             }
 
-            //sobjibazaar fish
+            //scraping data from sobjibazaar
             record = "";
             url = "";
 
             try {
-                url = "https://sobjibazaar.com/fish#/pageSize=20&orderBy=0"; //sobjibazaar
+                url = "https://sobjibazaar.com/filterSearch?q=soap&cid=0&mid=0&pf=&pt=&adv=false&isc=false&sid=false#/pageSize=6&orderBy=0"; //sobjibazaar
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for(Element element:productTitle) {
+                int i = 0;
+                String name_value = "";
+
+
+                Boolean shampoo = false;
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    if (name_value.indexOf("Shampoo") != -1) {
+                        record += url;
+                        record += " ,";
+                        record += name_value;
+                        record += ",";
+                        shampoo = true;
+                    }
+
+                }
+
+                if (shampoo) {
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(0, price_element_text.length() - 1);
+                    record += '\n';
+                    nameString[i] = name_value;
+                    i++;
+                }
+
+                //Log.d("habijabi", record);
+
+                try {
+
+                    FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                    out.write(record.getBytes(StandardCharsets.UTF_8));
+                    out.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+
+            //scraping data for
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/search/handwash";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", String.valueOf(products.size()));
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if(productname.indexOf("Handwash") != -1){
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    //Log.d("beef chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    if(discountedPrice.size() == 0){
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                    else{
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "handwash-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                url = "https://www.othoba.com/src?q=handwash"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            //Log.d("name size", "name size " + name.size() );
+            //Log.d("price size", "price size " + price.size());
+
+            n = name.size();
+            for(int i=0; i<n; i++){
+                record += url;
+                record += " ,";
+                if(name.get(i).text().indexOf("Handwash") != -1){
+                    //adding name
+                    record += name.get(i).text();
+                    record += ",";
+
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(3);
+                    record += '\n';
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //scraping data from sobjibazaar
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/filterSearch?q=handwash&adv=true&cid=0&mid=0&pf=&pt=&adv=false&isc=false&sid=false"; //sobjibazaar
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "sobijbazaar scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            //adding name and prices of sobjibazaar
+            productTitle = doc.select(".product-title");
+
+            price = doc.select(".price.actual-price");
+
+            n = price.size();
+            nameString = new String[n];//contains names of the products of sobijbazaar
+
+            //retrieving names from product-title
+            for(Element element:productTitle) {
+                int i = 0;
+                String name_value = "";
+
+
+                Boolean handwash = false;
+                Elements a = element.getElementsByTag("a");
+                for (Element a_element : a) {
+                    name_value = a.text();
+                    //Log.d("sflsk", "sobjibazaar product " + name_value);
+                    if (name_value.indexOf("Handwash") != -1) {
+                        record += url;
+                        record += " ,";
+                        record += name_value;
+                        record += ",";
+                        handwash = true;
+                    }
+
+                }
+
+                if (handwash) {
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(0, price_element_text.length() - 1);
+                    record += '\n';
+                    nameString[i] = name_value;
+                    i++;
+                }
+
+                //Log.d("habijabi", record);
+
+                try {
+
+                    FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                    out.write(record.getBytes(StandardCharsets.UTF_8));
+                    out.close();
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            //scraping data for
+
+            //scraping from chaldal
+            record = "";
+            url = "";
+            try {
+                url = "https://chaldal.com/search/sanitizer";
+                doc = Jsoup.connect(url).get();
+                //Log.d("lkj", "beef scraped");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".product");
+            //Log.d("number of products", String.valueOf(products.size()));
+            //Log.d("number of products", "number of products " + String.valueOf(products.size()));
+
+
+            for (Element product : products) {
+                //String name = product.select(".name").text();
+                //productname += name;
+                //productname += ',';
+                String productname = product.select(".name").text();
+                //Log.d("lfjs",productname.indexOf("Beef")+"");
+                if(productname.indexOf("Sanitizer") != -1){
+                    record += url + " ,";
+                    record += product.select(".name").text();
+                    record += ',';
+
+                    //Log.d("beef chaldal", record);
+                    Elements discountedPrice = product.select(".discountedPrice");
+                    if(discountedPrice.size() == 0){
+                        discountedPrice = product.select(".price");
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                    else{
+                        for (Element discountedValue : discountedPrice) {
+                            Elements insidePrice = discountedValue.getElementsByTag("span");
+                            for (Element priceElement : insidePrice) {
+
+                                try {
+                                    String priceValue = String.valueOf(Integer.parseInt(priceElement.text().replaceAll(",","")));
+                                    //Log.d("price value beef", priceValue+"\n");
+                                    record += priceValue;
+                                } catch (NumberFormatException nfe) {
+                                    nfe.printStackTrace();
+                                }
+                            }
+                            record += "\n";
+                        }
+                    }
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+            //Log.d("productname", productname);
+
+            FILENAME = "sanitizer-data.csv";
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_PRIVATE);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+
+            //scraping data from othoba.com
+            record = "";
+            url = "";
+
+            try {
+                url = "https://www.othoba.com/src/sanitizers-disinfectants?q=sanitizer"; //othoba
+                doc = Jsoup.connect(url).get();
+                //Log.d("scraped successfully", "scraped successfully");
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            products = doc.select(".details"); //othoba
+
+            //adding name and prices of othoba
+            name = doc.select(".product-title");
+            price = doc.select(".price.actual-price");
+            //Log.d("name size", "name size " + name.size() );
+            //Log.d("price size", "price size " + price.size());
+
+            n = name.size();
+            for(int i=0; i<n; i++){
+
+                if(name.get(i).text().indexOf("Sanitizer") != -1){
+                    record += url;
+                    record += " ,";
+                    //adding name
+                    record += name.get(i).text();
+                    record += ",";
+
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(3);
+                    record += '\n';
+                }
+            }
+
+
+            //Log.d("habijabi", record);
+
+            try {
+                FileOutputStream out = ContentContext.openFileOutput(FILENAME,MODE_APPEND);
+                //Log.d("file created", "file created");
+                out.write(record.getBytes(StandardCharsets.UTF_8));
+                out.close();
+
+            } catch (Exception e) {
+                //Log.d("file not create", "file not created");
+                //Log.d("file not create", e.toString());
+                e.printStackTrace();
+            }
+
+            //scraping data from sobjibazaar
+            record = "";
+            url = "";
+
+            try {
+                url = "https://sobjibazaar.com/filterSearch?q=sanitizer&adv=true&cid=0&mid=0&pf=&pt=&adv=false&isc=false&sid=false#/pageSize=6&orderBy=0"; //sobjibazaar
                 doc = Jsoup.connect(url).get();
                 //Log.d("scraped successfully", "sobijbazaar scraped successfully");
 
@@ -1153,36 +2272,48 @@ public class Scraper extends Activity {
             for(Element element:productTitle){
                 int i=0;
                 String name_value = "";
-                record += url;
-                record += " ,";
+
+
+                Boolean sanitizer = false;
                 Elements a = element.getElementsByTag("a");
                 for(Element a_element: a){
                     name_value = a.text();
                     //Log.d("sflsk", "sobjibazaar product " + name_value);
-                    record += name_value;
-                    record += ",";
+                    if(name_value.indexOf("Sanitizer") != -1){
+                        record += url;
+                        record += " ,";
+                        record += name_value;
+                        record += ",";
+                        sanitizer = true;
+                    }
+
                 }
 
+                if(sanitizer){
+                    //adding price
+                    String price_element_text = price.get(i).text();
+                    record += price_element_text.substring(0, price_element_text.length()-1);
+                    record += '\n';
+                    nameString[i] = name_value;
+                    i++;
+                }
 
-                //adding price
-                String price_element_text = price.get(i).text();
-                record += price_element_text.substring(0, price_element_text.length()-1);
-                record += '\n';
-                nameString[i] = name_value;
-                i++;
+                //Log.d("habijabi", record);
+
+                try{
+
+                    FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
+                    out.write(record.getBytes(StandardCharsets.UTF_8));
+                    out.close();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
             }
 
-            //Log.d("habijabi", record);
 
-            try{
 
-                FileOutputStream out = ContentContext.openFileOutput(FILENAME, MODE_APPEND);
-                out.write(record.getBytes(StandardCharsets.UTF_8));
-                out.close();
 
-            }catch (Exception e){
-                e.printStackTrace();
-            }
 
 
 
@@ -1194,5 +2325,4 @@ public class Scraper extends Activity {
             return null;
         }
     }
-
 }
