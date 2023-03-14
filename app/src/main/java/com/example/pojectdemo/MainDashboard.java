@@ -60,6 +60,9 @@ public class MainDashboard extends AppCompatActivity implements View.OnClickList
 
         featuredLocations.add(new featuredHelper(R.drawable.featured_chaldal, "CHALDAL", "CHALDAL is currently the biggest online grocary marketplace in Bangladesh"));
         featuredLocations.add(new featuredHelper(R.drawable.featured_othoba, "OTHOBA", "OTHOBA is one of the fastest growing online marketplace in Bangladesh"));
+        featuredLocations.add(new featuredHelper(R.drawable.featured_daraz, "DARAZ", "Bangladesh's best online shopping store with 17+ million products"));
+        featuredLocations.add(new featuredHelper(R.drawable.featured_swapno, "SWAPNO", "MOTTO: Order grocery online, save money, save time"));
+        featuredLocations.add(new featuredHelper(R.drawable.featured_pickaboo, "PICKABOO", "Trusted online shop in Bangladesh for genuine electronics"));
         featuredLocations.add(new featuredHelper(R.drawable.featured_sobjibazaar, "SOBJIBAZAAR", "sobjibazar is also a potential newcomer online shop in BD"));
 
         adapter = new Featured_Adapter(featuredLocations);

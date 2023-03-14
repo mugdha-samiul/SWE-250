@@ -226,7 +226,7 @@
 
                 <LinearLayout
                     android:id="@+id/featured_bg"
-                    android:layout_width="170dp"
+                    android:layout_width="140dp"
                     android:layout_height="360dp"
                     android:background="@color/SandyBrown"
                     android:orientation="vertical">
@@ -238,7 +238,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginBottom="50dp"
                         android:fontFamily="@font/marko_one"
-                        android:text="ALL FEATURED ONLINE SHOPS"
+                        android:text="ALL\nFEATURED\nONLINE\nSHOPS"
                         android:textAllCaps="true"
                         android:textColor="@color/AntiqueWhite"
                         android:textSize="20dp" />

@@ -159,6 +159,9 @@ public class ProductInfo extends AppCompatActivity {
                         line2 = String.format("%s%s",line2,line.charAt(k));
                         //line2 = line2 + line.charAt(k);
                     }
+                    else if(line.charAt(k-1)>='0' && line.charAt(k-1)<='9'){
+                        continue;
+                    }
                     else{
                         line2 = String.format("%s%s",line2,enter);
                         line2 = String.format("%s%s",line2,enter);

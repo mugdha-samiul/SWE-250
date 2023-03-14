@@ -26,6 +26,11 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
     private TextView name3;
     private TextView name4;
     private TextView name5;
+    private ImageView img1;
+    private ImageView img2;
+    private ImageView img3;
+    private ImageView img4;
+    private ImageView img5;
     private String str1 = "";
     private String str2 = "";
     private String str3 = "";
@@ -50,6 +55,12 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
         name3 = (TextView) this.findViewById(R.id.ITEM3name);
         name4 = (TextView) this.findViewById(R.id.ITEM4name);
         name5 = (TextView) this.findViewById(R.id.ITEM5name);
+
+        img1 = (ImageView)this.findViewById(R.id.IMG1);
+        img2 = (ImageView)this.findViewById(R.id.IMG2);
+        img3 = (ImageView)this.findViewById(R.id.IMG3);
+        img4 = (ImageView)this.findViewById(R.id.IMG4);
+        img5 = (ImageView)this.findViewById(R.id.IMG5);
 
         button1.setOnClickListener(this);
         button2.setOnClickListener(this);
@@ -76,6 +87,11 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
             str3 = "chicken";
             str4 = "egg";
             str5 = "fish";
+            img1.setImageResource(R.drawable.beef);
+            img2.setImageResource(R.drawable.mutton);
+            img3.setImageResource(R.drawable.chicken);
+            img4.setImageResource(R.drawable.eggs);
+            img5.setImageResource(R.drawable.fish);
         }
         else if(productName.equals("personal_care")){
             name1.setText("toothpaste");
@@ -88,6 +104,11 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
             str3 = "shampoo";
             str4 = "handwash";
             str5 = "sanitizer";
+            img1.setImageResource(R.drawable.toothbrush);
+            img2.setImageResource(R.drawable.soap);
+            img3.setImageResource(R.drawable.shampoo);
+            img4.setImageResource(R.drawable.handwash);
+            img5.setImageResource(R.drawable.hand_sanitizer);
         }
         else if(productName.equals("stationary")){
             name1.setText("notebook");
@@ -98,8 +119,13 @@ public class CategorySegment extends AppCompatActivity implements View.OnClickLi
             str1 = "notebook";
             str2 = "pen";
             str3 = "pencil";
-            str4 = "color-pencil";
+            str4 = "color-pen";
             str5 = "eraser";
+            img1.setImageResource(R.drawable.book);
+            img2.setImageResource(R.drawable.pen);
+            img3.setImageResource(R.drawable.pencil);
+            img4.setImageResource(R.drawable.eraser);
+            img5.setImageResource(R.drawable.colored_pencils);
         }
         else if(productName.equals("processed_food")){
             name1.setText("chips");
