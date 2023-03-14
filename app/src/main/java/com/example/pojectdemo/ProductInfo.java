@@ -127,23 +127,52 @@ public class ProductInfo extends AppCompatActivity {
         Log.d("filename", filename);
 
         List<String> records = new ArrayList<>();
+        String[] productnames;
+        String[] productprices;
+
+        int i=0;
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            int i=0;
+            i=0;
+            /*
             while ((line = br.readLine()) != null) {
                 //records[i] = line;
                 i++;
                 records.add(line);
                 Log.d("reading from csv", line);
             }
+
+             */
+
+            int n = i;
+            productnames = new String[1000];
+            productprices = new String[1000];
+
+            while ((line = br.readLine()) != null) {
+                //records[i] = line;
+                productnames[i] = line;
+                productprices[i] = line;
+                Log.d("productnames", productnames[i]);
+                i++;
+                //Log.d("reading from csv", line);
+            }
+
+            listView = findViewById(R.id.lv_customerList);
+            //ArrayAdapter arrayAdapter = new ArrayAdapter<String>(ProductInfo.this, android.R.layout.simple_list_item_1, records);
+            CustomizedListAdapter arrayAdapter = new CustomizedListAdapter(ProductInfo.this, productnames, productprices);
+            listView.setAdapter(arrayAdapter);
+
+
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
-        listView = findViewById(R.id.lv_customerList);
-        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(ProductInfo.this, android.R.layout.simple_list_item_1, records);
-        listView.setAdapter(arrayAdapter);
+        //listView = findViewById(R.id.lv_customerList);
+        //ArrayAdapter arrayAdapter = new ArrayAdapter<String>(ProductInfo.this, android.R.layout.simple_list_item_1, records);
+        //CustomizedListAdapter arrayAdapter = new CustomizedListAdapter(ProductInfo.this, productnames, productprices);
+        //listView.setAdapter(arrayAdapter);
 
     }
 }
