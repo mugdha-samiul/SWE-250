@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Size;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -150,8 +151,23 @@ public class ProductInfo extends AppCompatActivity {
 
             while ((line = br.readLine()) != null) {
                 //records[i] = line;
-                productnames[i] = line;
-                productprices[i] = line;
+                String line2 = "";
+                String enter = "\n";
+                int p = 0;
+                for(int k = 0;k < line.length();k++){
+                    if(line.charAt(k)!=','){
+                        line2 = String.format("%s%s",line2,line.charAt(k));
+                        //line2 = line2 + line.charAt(k);
+                    }
+                    else{
+                        line2 = String.format("%s%s",line2,enter);
+                        line2 = String.format("%s%s",line2,enter);
+                    }
+                }
+
+                productnames[i] = line2;
+                productprices[i] = "                                                                                                                          ";
+
                 Log.d("productnames", productnames[i]);
                 i++;
                 //Log.d("reading from csv", line);
@@ -175,4 +191,5 @@ public class ProductInfo extends AppCompatActivity {
         //listView.setAdapter(arrayAdapter);
 
     }
+
 }

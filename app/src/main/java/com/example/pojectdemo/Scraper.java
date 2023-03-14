@@ -315,7 +315,8 @@ public class Scraper extends Activity {
                             }
                             record += "\n";
                         }
-                    } else {
+                    }
+                    else {
                         for (Element discountedValue : discountedPrice) {
                             Elements insidePrice = discountedValue.getElementsByTag("span");
                             for (Element priceElement : insidePrice) {

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp">
+
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_width="300dp"
+        android:layout_height="150dp"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/mv_image"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bottle"
+            android:scaleType="centerCrop">
+        </ImageView>
+
+        <TextView
+            android:id="@+id/mv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/mv_image"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/marko_one">
+        </TextView>
+
+        <RatingBar
+            android:id="@+id/mv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_below="@+id/mv_title"
+            android:layout_toRightOf="@+id/mv_image"
+            android:layout_marginLeft="10dp"
+            android:rating="4">
+        </RatingBar>
+
+        <TextView
+            android:id="@+id/mv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Water is the most famous drink"
+            android:layout_below="@+id/mv_rating"
+            android:layout_toRightOf="@+id/mv_image"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:fontFamily="@font/marko_one">
+        </TextView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView image;
     TextView logo, slogan, slogan2;
 
-
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
