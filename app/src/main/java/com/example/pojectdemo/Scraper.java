@@ -2312,16 +2312,6 @@ public class Scraper extends Activity {
             }
 
 
-
-
-
-
-
-
-
-
-
-
             return null;
         }
     }
